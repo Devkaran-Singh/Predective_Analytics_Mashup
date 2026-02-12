@@ -20,6 +20,8 @@ Given videos Collection based on singer name ----> Converting videos to audios -
 
 # 4. Web Application:
 
-
+<img width="1918" height="970" alt="image" src="https://github.com/user-attachments/assets/c20abe15-41b1-425d-bb7f-3438b0c707b6" />
 
 # 5. Result
+
+<img width="1919" height="967" alt="image" src="https://github.com/user-attachments/assets/da9b6d8a-b13a-415f-94bd-c874ea39b69c" />
