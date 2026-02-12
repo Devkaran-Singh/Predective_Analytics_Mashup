@@ -84,6 +84,5 @@ def status(job_id):
         "status": job_status.get(job_id, "unknown")
     })
 
-
 if __name__ == "__main__":
     app.run(debug=True)

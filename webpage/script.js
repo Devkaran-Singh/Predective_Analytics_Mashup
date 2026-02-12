@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const singer = document.getElementById("singer").value.trim();
-    const videos = parseInt(document.getElementById("videos").value, 10);
-    const duration = parseInt(document.getElementById("duration").value, 10);
+    const videos = document.getElementById("videos").value;
+    const duration = document.getElementById("duration");
     const email = document.getElementById("email").value.trim();
 
     if (!singer) {
@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Please enter a valid email address.");
       return;
     }
-
     button.disabled = true;
     btnText.style.display = "none";
     spinner.style.display = "block";
@@ -38,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await res.json();
       return data.status;
     }
-
     try {
       const response = await fetch("/generate", {
         method: "POST",
@@ -49,10 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!response.ok) {
         throw new Error("Server error");
       }
-
       const result = await response.json();
       const jobId = result.job_id;
-
+      
       const interval = setInterval(async () => {
         const status = await checkStatus(jobId);
         if (status === "done") {
